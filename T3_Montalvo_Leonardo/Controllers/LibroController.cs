@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using T3_Montalvo_Leonardo.Datos;
 using T3_Montalvo_Leonardo.Models;
 
@@ -20,6 +21,8 @@ namespace T3_Montalvo_Leonardo.Controllers
             return View(lista);
         }
 
+
+        [Authorize]
         public IActionResult Crear()
         {
             return View();
@@ -38,6 +41,7 @@ namespace T3_Montalvo_Leonardo.Controllers
             return View(libro);
         }
 
+        [Authorize]
         public IActionResult Editar(int? Id)
         {
             if (Id == null || Id == 0)
@@ -65,6 +69,7 @@ namespace T3_Montalvo_Leonardo.Controllers
             return View(libro);
         }
 
+        [Authorize]
         public IActionResult Eliminar(int? Id)
         {
             if (Id == null || Id == 0)
