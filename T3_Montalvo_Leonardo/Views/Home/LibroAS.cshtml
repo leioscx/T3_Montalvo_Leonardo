@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "Libros de Arquitectura de Software";
+    var libros = new[]
+    {
+        new {
+            Titulo = "Clean Architecture",
+            Autor = "Robert C. Martin",
+            ImagenUrl = "https://images.cdn2.buscalibre.com/fit-in/360x360/71/8a/718a4cccdea44cf4b37c74a93f5bf96d.jpg",
+            Descripcion = "Este libro ofrece una guía completa sobre cómo estructurar sistemas de software duraderos, flexibles y mantenibles. Robert C. Martin (también conocido como Uncle Bob) establece los principios fundamentales de la arquitectura limpia, destacando la separación de responsabilidades, la independencia de frameworks, y la priorización de reglas de negocio sobre detalles técnicos. A través de ejemplos claros y casos de estudio, se abordan temas como la organización del código, los límites entre capas, el uso de casos de uso como núcleo del sistema y la importancia de la prueba automatizada. Es una lectura esencial para arquitectos de software y desarrolladores que buscan crear aplicaciones resistentes al paso del tiempo.",
+            VideoUrl = "https://www.youtube.com/embed/0Ug_c27ibZs?si=nQn3rKiud5F1MC2t"
+        },
+        new {
+            Titulo = "Software Architecture: The Hard Parts",
+            Autor = "Neal Ford, Mark Richards, Pramod Sadalage",
+            ImagenUrl = "https://m.media-amazon.com/images/I/81sdcxLtlwL.jpg",
+            Descripcion = "Este libro profundiza en los aspectos más difíciles y complejos de la arquitectura de software moderna, como la toma de decisiones sobre partición de sistemas, estilos de arquitectura distribuida, y trade-offs en torno a la consistencia, escalabilidad y resiliencia. Los autores, expertos reconocidos en arquitectura de software, proporcionan estrategias para lidiar con decisiones inevitables y a menudo ambiguas. El texto discute cómo aplicar principios como el diseño evolutivo, integración continua en arquitecturas distribuidas, y patrones como microservicios y event sourcing. Con un enfoque práctico y realista, enseña a equilibrar idealismo técnico con las necesidades del negocio.",
+            VideoUrl = "https://www.youtube.com/embed/Q6RfMmMwhvM?si=ZdzSXyLvSSRM-ekN"
+        },
+        new {
+            Titulo = "Domain-Driven Design",
+            Autor = "Eric Evans",
+            ImagenUrl = "https://images.cdn3.buscalibre.com/fit-in/360x360/a5/f9/a5f924a164612f22d63ead8876217c7f.jpg",
+            Descripcion = "Domain-Driven Design introduce una filosofía de diseño centrada en el dominio del negocio y la colaboración entre expertos técnicos y del negocio. Eric Evans propone que, para diseñar software complejo, se debe construir un modelo rico y comprensible del dominio, que sirva como base para el desarrollo. El libro cubre conceptos como Bounded Contexts, Aggregates, Entities, Value Objects, y Ubiquitous Language. Además, aborda técnicas para mantener la integridad del modelo a medida que crece la aplicación. Este enfoque promueve software alineado con la realidad del negocio, reduciendo la complejidad técnica y aumentando la claridad en los sistemas.",
+            VideoUrl = "https://www.youtube.com/embed/UgEExav6CeE?si=8NQZ5PF2HhHnyqHq"
+        }
+    };
+}
+
+<h1>@ViewData["Title"]</h1>
+
+@foreach (var libro in libros)
+{
+    <div>
+        <h2>@libro.Titulo</h2>
+        <p><strong>Autor:</strong> @libro.Autor</p>
+        <img src="@libro.ImagenUrl" alt="Portada de @libro.Titulo" width="200" />
+        <p>@libro.Descripcion</p>
+        <iframe width="400" height="225" src="@libro.VideoUrl" frameborder="0" allowfullscreen></iframe>
+        <hr />
+    </div>
+}

@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Libros de Diseño de Software";
+
+    var libros = new[]
+    {
+        new {
+            Titulo = "Design Patterns: Elements of Reusable Object-Oriented Software",
+            Autor = "Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides",
+            ImagenUrl = "https://m.media-amazon.com/images/I/81IGFC6oFmL.jpg",
+            Descripcion = "Este libro, considerado un clásico en el mundo del desarrollo de software, introduce 23 patrones de diseño que resuelven problemas comunes en la programación orientada a objetos. Escrito por los conocidos Gang of Four, proporciona soluciones reutilizables, bien estructuradas y probadas para problemas arquitectónicos y de diseño. Los patrones se agrupan en tres categorías: creacionales, estructurales y de comportamiento. Cada patrón incluye una descripción detallada, un caso de uso, implementación en código y diagramas UML. El objetivo es fomentar la reutilización del conocimiento y mejorar la calidad del diseño de software al evitar soluciones ad hoc o duplicación innecesaria.",
+            VideoUrl = "https://www.youtube.com/embed/ZfG8BSTX0Lw?si=Eh7eeXIZVmW6csoa"
+        },
+        new {
+            Titulo = "Refactoring: Improving the Design of Existing Code",
+            Autor = "Martin Fowler",
+            ImagenUrl = "https://images.cdn2.buscalibre.com/fit-in/360x360/3a/56/3a56fcbabe6fa0b612263773f425ad10.jpg",
+            Descripcion = "En este libro fundamental, Martin Fowler expone un enfoque sistemático para mejorar el diseño de software existente sin alterar su funcionalidad. El proceso de refactorización implica aplicar pequeños cambios estructurales al código, manteniéndolo limpio, legible y fácil de modificar. El libro presenta más de 70 técnicas de refactorización, cada una explicada con ejemplos en código, motivaciones, y cuándo aplicarlas. También introduce conceptos clave como el code smell (olor de código) y el desarrollo dirigido por pruebas (TDD). Es una herramienta indispensable para desarrolladores que desean mejorar la calidad interna del software y evitar la deuda técnica.",
+            VideoUrl = "https://www.youtube.com/embed/CjCJ76oZXTE?si=S_AUhZ6lruP_DzX5"
+        },
+        new {
+            Titulo = "The Pragmatic Programmer",
+            Autor = "Andrew Hunt, David Thomas",
+            ImagenUrl = "https://images.cdn2.buscalibre.com/fit-in/360x360/03/1a/031af9d7e401bb2d08911c317ecbedad.jpg",
+            Descripcion = "The Pragmatic Programmer es una colección de consejos prácticos, técnicas y filosofía para desarrolladores que buscan escribir mejor software y mejorar continuamente como profesionales. El libro cubre una amplia gama de temas como automatización, documentación, diseño modular, control de versiones, y pruebas. Promueve actitudes como la responsabilidad personal, la curiosidad, y la adaptabilidad. Cada capítulo está lleno de ideas valiosas y ejemplos útiles aplicables a cualquier lenguaje o plataforma. Este libro no solo enseña a escribir mejor código, sino también a pensar de manera crítica y estratégica en el trabajo diario como desarrollador.",
+            VideoUrl = "https://www.youtube.com/embed/oIxLFoQQVB8?si=zzPUn7fdUPlCgqnF"
+        }
+    };
+}
+
+<h1>@ViewData["Title"]</h1>
+
+@foreach (var libro in libros)
+{
+    <div>
+        <h2>@libro.Titulo</h2>
+        <p><strong>Autor:</strong> @libro.Autor</p>
+        <img src="@libro.ImagenUrl" alt="Portada de @libro.Titulo" width="200" />
+        <p>@libro.Descripcion</p>
+        <iframe width="400" height="225" src="@libro.VideoUrl" frameborder="0" allowfullscreen></iframe>
+        <hr />
+    </div>
+}
+

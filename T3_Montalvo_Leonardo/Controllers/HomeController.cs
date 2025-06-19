@@ -23,6 +23,16 @@ namespace T3_Montalvo_Leonardo.Controllers
             return View();
         }
 
+        public IActionResult LibroAS() 
+        {
+            return View();
+        }
+
+        public IActionResult LibroDS()
+        {
+            return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
